@@ -1,6 +1,8 @@
-package chapter05;
+package chapter05.inheritance;
 
-public class Manage extends Employee{
+import chapter05.inheritance.Employee;
+
+public class Manage extends Employee {
 
 
     private double bonus;

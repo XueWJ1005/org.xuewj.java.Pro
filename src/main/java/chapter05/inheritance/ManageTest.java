@@ -1,4 +1,7 @@
-package chapter05;
+package chapter05.inheritance;
+
+import chapter05.inheritance.Employee;
+import chapter05.inheritance.Manage;
 
 public class ManageTest {
 
