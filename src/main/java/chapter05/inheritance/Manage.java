@@ -20,5 +20,11 @@ public class Manage extends Employee {
         bonus = b;
     }
 
+    public boolean equals(Object otherObject){
+        if(!super.equals(otherObject)) return false;
+        Manage other = (Manage) otherObject;
+        return bonus == other.bonus;
+    }
+
 
 }
