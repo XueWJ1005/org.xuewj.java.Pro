@@ -38,4 +38,11 @@ public class Employee extends Person {
 
         return Objects.equals(name, other.name) && salary == other.salary ;
     }
+    public int hashCode(){
+        return Objects.hash(name, salary);
+    }
+
+    public String toString(){
+        return "Employee[name = " + name + ",salary= " + salary + "]";
+    }
 }
