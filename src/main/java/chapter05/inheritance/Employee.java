@@ -10,39 +10,43 @@ public class Employee extends Person {
     private double salary;
     private String name;
 
-    public Employee(){
+    public Employee() {
 
     }
-    public Employee(String name, double salary){
+
+    public Employee(String name, double salary) {
 //        super(name);
         this.name = name;
         this.salary = salary;
     }
 
 
-    public double getSalary(){
+    public double getSalary() {
         return salary;
     }
-    public String getDescription(){
+
+    public void raiseSalary(double byPercent){
+        double raise = salary * byPercent/100;
+        salary += raise;
+    }
+
+    public String getDescription() {
         return String.format("an employee with a salary of $%.2f", salary);
     }
 
-    public boolean equals(Object otherObject){
-        if(this == otherObject) return true;
-
-        if(otherObject == null) return false;
-
-        if(getClass() != otherObject.getClass()) return false;
-
+    public boolean equals(Object otherObject) {
+        if (this == otherObject) return true;
+        if (otherObject == null) return false;
+        if (getClass() != otherObject.getClass()) return false;
         Employee other = (Employee) otherObject;
-
-        return Objects.equals(name, other.name) && salary == other.salary ;
+        return Objects.equals(name, other.name) && salary == other.salary;
     }
-    public int hashCode(){
+
+    public int hashCode() {
         return Objects.hash(name, salary);
     }
 
-    public String toString(){
+    public String toString() {
         return "Employee[name = " + name + ",salary= " + salary + "]";
     }
 }
