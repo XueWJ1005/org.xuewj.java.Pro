@@ -4,7 +4,7 @@ import chapter05.abstractClasses.Person;
 
 import java.util.Objects;
 
-public class Employee extends Person {
+public class Employee extends Person implements Comparable<Employee> {
 
 
     private double salary;
@@ -20,13 +20,16 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
+    public String getName() {
+        return name;
+    }
 
     public double getSalary() {
         return salary;
     }
 
-    public void raiseSalary(double byPercent){
-        double raise = salary * byPercent/100;
+    public void raiseSalary(double byPercent) {
+        double raise = salary * byPercent / 100;
         salary += raise;
     }
 
@@ -48,5 +51,11 @@ public class Employee extends Person {
 
     public String toString() {
         return "Employee[name = " + name + ",salary= " + salary + "]";
+    }
+
+
+    @Override
+    public int compareTo(Employee o) {
+        return 0;
     }
 }
