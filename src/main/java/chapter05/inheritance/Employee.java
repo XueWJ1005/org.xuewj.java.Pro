@@ -2,13 +2,16 @@ package chapter05.inheritance;
 
 import chapter05.abstractClasses.Person;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Objects;
 
-public class Employee extends Person implements Comparable<Employee> {
-
+public class Employee extends Person implements Comparable<Employee>, Cloneable {
 
     private double salary;
     private String name;
+    private Date hireDay;
+
 
     public Employee() {
 
@@ -18,6 +21,13 @@ public class Employee extends Person implements Comparable<Employee> {
 //        super(name);
         this.name = name;
         this.salary = salary;
+        hireDay = new Date();
+    }
+
+    public Employee clone() throws CloneNotSupportedException{
+        Employee cloned = (Employee)super.clone();
+        cloned.hireDay = (Date) hireDay.clone();
+        return cloned;
     }
 
     public String getName() {
@@ -31,6 +41,11 @@ public class Employee extends Person implements Comparable<Employee> {
     public void raiseSalary(double byPercent) {
         double raise = salary * byPercent / 100;
         salary += raise;
+    }
+
+    public void setHireDay(int year, int month, int day){
+        Date newHireDay = new GregorianCalendar(year, month - 1, day).getTime();
+        hireDay.setTime(newHireDay.getTime());
     }
 
     public String getDescription() {
@@ -50,7 +65,7 @@ public class Employee extends Person implements Comparable<Employee> {
     }
 
     public String toString() {
-        return "Employee[name = " + name + ",salary= " + salary + "]";
+        return "Employee[name = " + name + ",salary= " + salary + ",hireDay=" + hireDay + "]";
     }
 
 
