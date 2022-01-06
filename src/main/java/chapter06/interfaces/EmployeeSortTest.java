@@ -10,7 +10,7 @@ public class EmployeeSortTest {
         Employee[] staff = new Employee[3];
 
         staff[0] = new Employee("harry", 10000);
-        staff[1] = new Employee("Tina", 20000);
+        staff[1] = new Employee("Tina", 40000);
         staff[2] = new Employee("Jack", 30000);
 
         Arrays.sort(staff);

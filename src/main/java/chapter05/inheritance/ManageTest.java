@@ -19,5 +19,7 @@ public class ManageTest {
              staff) {
             System.out.println(e.getClass().getName() + " name = " + e.getName() + ",salary = " + e.getSalary());
         }
+
+//        System.out.println(staff[0]);
     }
 }
