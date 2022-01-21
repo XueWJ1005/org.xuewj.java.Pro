@@ -17,6 +17,7 @@ public class LambdaTest {
         System.out.println(Arrays.toString(planets));
 
         Timer t = new Timer(10000, event -> System.out.println("The time is " + new Date()));
+//        Timer t = new Timer(10000, System.out::println);
         t.start();
 
         JOptionPane.showMessageDialog(null, "Quit program");
