@@ -15,9 +15,6 @@ public class Employee extends Person implements Comparable<Employee>, Cloneable 
 //    private Date hireDay;
 
 
-    public Employee() {
-
-    }
 
     public Employee(String name, double salary) {
 //        super(name);
